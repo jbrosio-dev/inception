@@ -1,0 +1,202 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | Jbrosio</title>
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background-color: #121212; color: #00ff00; text-align: center; padding-top: 10vh; }
+        h1 { color: #ffffff; letter-spacing: 2px; }
+        .container { border: 1px solid #333; display: inline-block; padding: 40px; border-radius: 8px; background-color: #1e1e1e; box-shadow: 0 4px 8px rgba(0,0,0,0.5); max-width: 600px; }
+        .stack { color: #ff00ff; font-weight: bold; }
+        hr { border-color: #333; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JUAN AGUSTIN BROSIO</h1>
+        <h2>Junior Full Stack Developer & 42 Student</h2>
+        <p>Desarrollador con formación en ingeniería de software y experiencia en desarrollo fullstack.</p>
+        <p>>_ Stack principal: <span class="stack">C, C++, JavaScript, Docker, SQL</span></p>
+        <hr>
+        <p>🎓 Educación: Academia 42 | Bootcamp HACK A BOSS</p>
+        <p>💼 Background: Liderazgo de equipos, resolución de problemas y atención al detalle (Marbella/Malaga, 2022-Actual).</p>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | Juansito</title>
+<style>
+:root {
+  --g:#00ff66;
+  --m:#e6c911;
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background:#0b0f0b;
+  color:var(--g);
+  font-family:'Courier New',monospace;
+  padding:20px
+}
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 1px,transparent 1px 3px);
+  animation:flicker 6s infinite
+}
+@keyframes flicker{
+  0%, 100%{opacity:.6} 50%{opacity:1}
+}
+.term {
+  width:min(680px,100%);
+  border:1px solid #1f3a1f;
+  border-radius:10px;
+  background:#0f150f;
+  box-shadow:0 0 40px rgba(0,255,102,.15);
+  overflow:hidden
+}
+.bar {
+  display:flex;
+  gap:8px;
+  padding:10px 14px;
+  background:#162016
+}
+.bar i {
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#ff5f56
+}
+.bar i:nth-child(2) {
+  background:#ffbd2e
+}
+.bar i:nth-child(3) {
+  background:#27c93f
+}
+.body {
+  padding:24px;
+  min-height:360px;
+  line-height:1.7
+}
+h1 {
+  color:#fff;
+  letter-spacing:2px;
+  font-size:1.6rem;
+  margin:0 0 4px;
+  text-shadow:0 0 8px rgba(255,255,255,.4)
+}
+h2 {
+  font-size:1rem;
+  margin:0 0 16px;
+  font-weight:normal
+}
+.stack {
+  color:var(--m);
+  font-weight:bold;
+  text-decoration: none;
+}
+.bold {
+  font-weight: bold;
+}
+.line {
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .5s,transform .5s;
+  margin:10px 0;
+}
+.line.a {
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .5s,transform .5s;
+  margin:10px 0;
+  font-style: italic;
+}
+.line.b {
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .5s,transform .5s;
+  margin:10px 0;
+}
+
+.line.b .stack {
+  text-decoration: none;
+}
+
+.line.show {
+  opacity:1;
+  transform:none
+}
+.cursor {
+  display:inline-block;
+  width:10px;
+  height:1em;
+  background:var(--g);
+  vertical-align:-2px;
+  animation:blink 1s steps(1) infinite
+}
+@keyframes blink {
+  50%{opacity:0}
+}
+@media (prefers-reduced-motion:reduce) {
+  *{animation:none!important;
+  transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="term">
+  <div class="bar"><i></i><i></i><i></i></div>
+  <div class="body">
+    <div class="line show">$ jbrosio ></div>
+    <h1 id="name"></h1>
+    <div class="line">
+      <h2>Junior Full Stack Developer | 42 Student</h2>
+    </div>
+    <div class="line a">Desarrollador con formación en ingeniería de software y experiencia en desarrollo fullstack.</div>
+    <div class="line b">
+      <span class="bold"> 💻 Stack principal: </span>
+      <span class="stack">C, C++, JavaScript, Docker, SQL</span>
+    </div>
+    <div class="line b">
+      <span class="bold"> 🎓 Educación: </span>
+      <span class="stack">Academia 42 | Bootcamp HACK A BOSS</span>
+    </div>
+    <div class="line b">
+      <span class="bold"> 💼 Background: </span>
+      <span class="stack"> Liderazgo de equipos, resolución de problemas y atención al detalle (Marbella, 2022-Actual).</span>
+    </div>
+    <div class="line show">$ <span class="cursor"></span></div>
+  </div>
+</div>
+<script>
+const text = "JUAN AGUSTIN BROSIO";
+const el = document.getElementById("name");
+const lines = document.querySelectorAll(".line:not(.show)");
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (still) {
+  el.textContent = text;
+  lines.forEach(l => l.classList.add("show"));
+} else {
+  let i = 0;
+  const type = () => {
+    el.textContent = text.slice(0, ++i);
+    if (i < text.length) return setTimeout(type, 70);
+    lines.forEach((l, k) => setTimeout(() => l.classList.add("show"), 400 + k * 450));
+  };
+  setTimeout(type, 500);
+}
+</script>
+</body>
+</html>

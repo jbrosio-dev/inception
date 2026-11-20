@@ -1,0 +1,9 @@
+[mysqld]
+# Puerto por defecto de MySQL/MariaDB
+port = 3306
+
+# Escuchar en todas las IPs para permitir conexiones de otros contenedores
+bind_address = 0.0.0.0
+
+# Usuario bajo el que correrá el proceso por seguridad
+user = mysql
