@@ -1,5 +1,7 @@
 # Inception
 
+[<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/fc70111f-734a-413d-98b0-22378c2f0409" />](https://i.pinimg.com/originals/f5/5e/80/f55e8059ea945abfd6804b887dd4a0af.gif)
+
 ## Description
 
 **Inception** is a System Administration project. The goal is to build a small, self-contained web infrastructure using **Docker** and **Docker Compose**, running inside a virtual machine. Every service is built from its own hand-written `Dockerfile` on top of **Debian Bookworm** (no pre-built images from DockerHub), runs in a dedicated container and communicates through a dedicated Docker network (`inception_net`).
